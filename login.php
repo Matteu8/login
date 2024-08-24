@@ -22,6 +22,8 @@ if (isset($_POST["email"])) {
             alert('Erro de senha')
         </script>";
     }
+    
+    
 }
 
 ?>
@@ -39,7 +41,7 @@ if (isset($_POST["email"])) {
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
