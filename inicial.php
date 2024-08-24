@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <div id="cont" class="container mb-2">
+    <div id="cont" class="container mb-5 mt-5">
         <h1 class="text-center">Página Inicial</h1>
         <p class="text-center">#</p>
         <p class="text-center">#</p>

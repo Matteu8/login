@@ -1,3 +1,10 @@
+/* ################ MODIFICANDO TUDO ################ */
+body{
+    margin: 0;
+    padding: 0;
+}
+/* ################ FIM MODIFICANDO TUDO ################ */
+
 /* ################ COMEÇO CADASTRO (FORM) ################ */
 .form {
     display: flex;
@@ -146,6 +153,7 @@
 
 /* ################ FIM INICIAL (inicial.php) ################ */
 
+
 /* ################ COMEÇO BOTÃO SAIR (sair.php) ################ */
 .button {
     padding: 1em 2em;
@@ -156,19 +164,19 @@
     text-transform: uppercase;
     cursor: pointer;
     background-color: #1A1A1A;
-    color: #004A8D;
+    color: #00BFFF;
     transition: all 1000ms;
     font-size: 15px;
     position: relative;
     overflow: hidden;
-    outline: 2px solid #004A8D;
+    outline: 2px solid #00BFFF;
 }
 
 .button:hover {
     color: #ffffff;
     transform: scale(1.1);
-    outline: 2px solid #004A8D;
-    box-shadow: 4px 5px 17px -4px #268391;
+    outline: 2px solid #0B7BA1;
+    box-shadow: 4px 5px 17px -4px #0B7BA1;
 }
 
 .button::before {
@@ -178,7 +186,7 @@
     top: 0;
     width: 0;
     height: 100%;
-    background-color: #004A8D;
+    background-color: #0B7BA1;
     transform: skewX(45deg);
     z-index: -1;
     transition: width 1000ms;
