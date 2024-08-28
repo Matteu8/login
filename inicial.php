@@ -1,3 +1,14 @@
+<?php
+include "conexao.php";
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+if (!isset($_SESSION["nome"])) {
+    header("Location:login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" data-bs-theme="dark">
 
@@ -10,40 +21,44 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/button_sair.css">
 </head>
 
 <body>
-    <div id="cont" class="container mb-5 mt-5">
+    <div class="container ">
         <h1 class="text-center">Página Inicial</h1>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
-        <p class="text-center">#</p>
+        <p class="text-center">Usuário: <?php echo $_SESSION["nome"]; ?></p>
+        
+        <div class="row d-flex justify-content-center">
+            <div class="card ms-3" style="width: 18rem;">
+                <img src="img/alterar.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Alteração de dados</h5>
+                    <p class="card-text">Deseja alterar seus dados (Senha, email e outros)</p>
+                    <a href="alterar.php" class="btn btn-info">Alterar</a>
+                </div>
+            </div>
+
+            <div class="card ms-3" style="width: 18rem;">
+                <img src="img/deletar.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Deletar</h5>
+                    <p class="card-text">Deseja excluir sua conta?</p>
+                    <a href="deletar.php" class="btn btn-danger">Deletar</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
 
         <div class="d-flex justify-content-center">
             <a href="sair.php">
-                <button class="button">Sair</button>
+                <button class="mt-5">Sair</button>
             </a>
         </div>
+
     </div>
 </body>
 

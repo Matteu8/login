@@ -4,27 +4,33 @@ include "conexao.php";
 if (!isset($_SESSION)) {
     session_start();
 }
-
-if (isset($_POST["email"])) {
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
-
-    $sql = "SELECT * FROM login WHERE email = '$email' limit 1";
-
-    $sql_exec = $mysqli->query($sql) or die($mysqli->error);
-    $usuario = $sql_exec->fetch_assoc();
-
-    if (password_verify($senha, $usuario["senha"])) {
-        $_SESSION["nome"] = $usuario["nome"];
-        header("Location:inicial.php");
-    } else {
-        echo "<script>
-            alert('Erro de senha')
-        </script>";
+if (isset($_SESSION["nome"])) {
+    header("Location:inicial.php");
+}else{
+    if (isset($_POST["email"])) {
+        $email = $_POST["email"];
+        $senha = $_POST["senha"];
+    
+        $sql = "SELECT * FROM login WHERE email = '$email' limit 1";
+    
+        $sql_exec = $mysqli->query($sql) or die($mysqli->error);
+        $usuario = $sql_exec->fetch_assoc();
+    
+        if (password_verify($senha, $usuario["senha"])) {
+            $_SESSION["id_login"] = $usuario['id_pessoas'];
+            $_SESSION["nome"] = $usuario['nome'];
+            $_SESSION["email"] = $usuario['email'];
+            $_SESSION["senha"] = $usuario['senha'];
+            header("Location:inicial.php");
+        } else {
+            echo "<script>
+                alert('Erro de senha')
+            </script>";
+        }
     }
-    
-    
 }
+
+
 
 ?>
 
@@ -41,7 +47,7 @@ if (isset($_POST["email"])) {
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
